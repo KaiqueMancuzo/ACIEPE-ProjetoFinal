@@ -114,23 +114,10 @@ int main(int argc, char *argv[]){
         }
     }
 
-    /*for(int i = 1; i <= n_rows; i++){
-        for(int j = 0; j < size; j++){
-            printf(" rankb:%d = %lf ",rank, grid_rows[i*size + j]);
-        }
-        printf("\n");}*/
-
     //Loop do cálculo do método iterativo de jacobi
     do{
         
-           /* if (rank != 0) {
-        MPI_Send(&grid_rows[size], size, MPI_DOUBLE, rank-1, tag_top, MPI_COMM_WORLD);
-        MPI_Recv(&grid_rows[0], size, MPI_DOUBLE, rank-1, tag_bottom, MPI_COMM_WORLD, &status);
-    }
-    if (rank != num_procs-1) {
-        MPI_Recv(&grid_rows[(n_rows+1)*size], size, MPI_DOUBLE, rank+1, tag_top, MPI_COMM_WORLD, &status);
-        MPI_Send(&grid_rows[n_rows*size], size, MPI_DOUBLE, rank+1, tag_bottom, MPI_COMM_WORLD);
-    }*/
+
 
         // Comunicação entre pares
     if (rank % 2 == 0) {
