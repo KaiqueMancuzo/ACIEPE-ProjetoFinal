@@ -1,6 +1,7 @@
 # ACIEPE-ProjetoFinal
-##Alunos: Kaique Mancuzo - 769189
-         ## Luiz Fernando de Oliveira - 759482
+## Alunos:
+  Kaique Mancuzo - 769189
+  Luiz Fernando de Oliveira - 759482
 
 ## Descrição do problema:
 
@@ -171,7 +172,7 @@ Depois disso, o valor de diff é armazenado na memória compartilhada na variáv
  ```
     
     
-##Resultados
+## Resultados
 A fim de testar a eficiência de cada solução, foram realizados testes de tempo utilizando o comando **time**. Cada teste foi realizado a partir da média de três execuções de cada solução. O input utilizado foi uma matriz de tamanho 2048 e 15000 iterações.
 
 A tabela abaixo contém os tempos de execução de cada solução, dos quais foram feitas as médias a fim de gerar um gráfico.
@@ -180,22 +181,22 @@ A tabela abaixo contém os tempos de execução de cada solução, dos quais for
 O gráfico abaixo expressa as médias dos tempos de execução de cada solução.
 ![image](https://user-images.githubusercontent.com/52456458/229246820-786d4372-55d3-4b9b-ab72-636e16a27840.png)
 
-###Sequencial
+### Sequencial
 No código sequencial, por não ter paralelização dos cáclulos, o tempo de execução irá aumentar à medida que o tamanho da matriz e o número de iterações aumentam.
 
-###OpenMP
+### OpenMP
 No código paralelizado com OpenMP, as threads podem paralelizar o calculo em uma máquina, mas à medida que o input aumenta, o número de threads também irá aumentar, diminuindo o tempo de execução em relação à versão sequencial.
 
-###MPI
+### MPI
 No código com MPI, no qual foi executado utilizando dois processos, é feita a paralelizaçao em várias máquinas, então à medida que o input aumenta, o número de hosts também pode aumentar e distribui entre vários processadores os cálculos.
 
-###CUDA
+### CUDA
 Para a paralelização utilizando CUDA foram feitas duas soluções:
 A **primeira** mantém a matriz na memória global e passa o ponteiro de referência da matriz a ser atualizada (phi) e da matriz do step atual, a qual é lida como referência (phi_old). Como será visto posteriormente, as dimensões do bloco serem 16x16 foi um fator decidido empiricamente (A partir de testes). Logo, o grid acabou sendo de dimensões ((N-2)/16 +1, (N-2)/16 +1) exatamente por causa do tamanho do bloco. 
 A segunda solução utiliza o processo de tiling, onde submatrizes de tamanho 16 x 16 são copiadas para a shared memory de cada bloco (O qual contém 16 x 16 threads) e então cada thread realiza a atualização do valor de cada elemento individualmente e só acessando os valores da shared memory tile.
 No código paralelizado com CUDA, a utilização da GPU para realizar os cálculos em paralelo aumenta o número de threads que podem ser executados simultaneamente, reduzindo bastante e de maneira mais eficiente em relação as outras versões.
 
-##Conclusão
+## Conclusão
 Portanto, através do gráfico gerado a partir das médias das execuções de cada solução, é possível concluir que a segunda solução que utiliza **CUDA** foi a solução que obteve um melhor desempenho. Por outro lado, e como já esperado, a solução que obteve pior desempenho foi a sequencial, pois o tempo de execução é proporcional ao tamanho da matriz.
 
 
