@@ -1,0 +1,16 @@
+platform, version, execution_time_s
+Sequencial, Serial, 236.285
+Sequencial, Serial, 246.254
+Sequencial, Serial, 238.881
+OpenMP, Paralelo, 189.403
+OpenMP, Paralelo, 183.261
+OpenMP, Paralelo, 180.590
+MPI, Paralelo, 107.039
+MPI, Paralelo, 111.899
+MPI, Paralelo, 110.742
+CUDA1, Paralelo, 18.085
+CUDA1, Paralelo, 18.318
+CUDA1, Paralelo, 18.629
+CUDA2, Paralelo, 14.991
+CUDA2, Paralelo, 15.267
+CUDA2, Paralelo, 15.644
