@@ -134,7 +134,7 @@ int main(int argc, char *argv[]){
     //save the final grid in file
     save_grid();
 
-    printf("\nKernel executed in %lf seconds with %d iterations.\n", exec_time, iter);
+    //printf("\nKernel executed in %lf seconds with %d iterations.\n", exec_time, iter);
 
     return 0;
 }
