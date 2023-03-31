@@ -3,7 +3,7 @@
 #include <math.h>
 
 #define CONV_THRESHOLD 1.0e-4f // threshold of convergence
-#define TILE_SIZE 16 // decidido empiricamente
+#define TILE_SIZE 16 
 
 __device__ double atomicMax_double(double* address, double val)
 {
