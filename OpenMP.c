@@ -101,7 +101,7 @@ int main(int argc, char *argv[]){
         iter++;
     }
 
-    //print_grid();
+    print_grid();
 
     return 0;
 }
